@@ -438,6 +438,25 @@ class TMDB{
 
 		return $movies;
 	}
+	
+	/**
+	 *  Search Movie
+	 *
+	 * 	@param string $keyword irgendwas
+	 * 	@return Movie[]
+	 */
+	public function searchByAll( $keyword){
+
+		$movies = array();
+
+		$result = $this->_call('search/keyword', 'query='. urlencode($keyword), $this->getLang());
+
+		foreach($result['results'] as $data){
+			$movies[] = new Movie($data);
+		}
+
+		return $movies;
+	}
 
 	/**
 	 *  Search TVShow

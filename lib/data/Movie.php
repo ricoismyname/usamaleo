@@ -56,15 +56,63 @@ class Movie{
 	public function getDescription() {
 		return $this->_data['overview'];
 	}
-/**
-	 * 	Get the Movie's description / overview
+
+	/**
+	 *
+	 * 	@return array
+	 */
+	public function getActors() {
+		return array_slice( $this->_data['casts']['cast'], 0, 4);
+	}
+	
+	/**
+	 *
+	 * 	@return array
+	 */
+	public function getGenres() {
+		return $this->_data['genres'];
+	}
+	
+	/**
 	 *
 	 * 	@return string
 	 */
-	public function getActors() {
-		return $this->_data['casts'];
+	public function getReleaseDate() {
+		return $this->_data['release_date'];
 	}
-
+	
+	/**
+	 *
+	 * 	@return string
+	 */
+	public function getDirector() {
+		$arrDirectors = array();
+		foreach ( $this->_data['casts']['crew'] as $arrCrew)
+		{
+			if ( $arrCrew["job"] == "Director" )
+			{
+				$arrDirectors[] = $arrCrew;
+			} 
+		}
+		return $arrDirectors;
+	}
+	
+	/**
+	 *
+	 * 	@return string
+	 */
+	public function getProducer() {
+		$arrProducers = array();
+		foreach ( $this->_data['casts']['crew'] as $arrCrew)
+		{
+			if ( $arrCrew["job"] == "Producer" )
+			{
+				$arrProducers[] = $arrCrew;
+			}
+		}
+		return $arrProducers;
+	}
+	
 	/**
 	 * 	Get the Movie's tagline
 	 *
