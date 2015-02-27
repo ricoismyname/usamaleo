@@ -31,7 +31,7 @@ class Movie{
 	// Get Variables
 	//------------------------------------------------------------------------------
 
-	/** 
+	/**
 	 * 	Get the Movie's id
 	 *
 	 * 	@return int
@@ -40,7 +40,7 @@ class Movie{
 		return $this->_data['id'];
 	}
 
-	/** 
+	/**
 	 * 	Get the Movie's title
 	 *
 	 * 	@return string
@@ -48,8 +48,24 @@ class Movie{
 	public function getTitle() {
 		return $this->_data['title'];
 	}
+	/**
+	 * 	Get the Movie's description / overview
+	 *
+	 * 	@return string
+	 */
+	public function getDescription() {
+		return $this->_data['overview'];
+	}
+/**
+	 * 	Get the Movie's description / overview
+	 *
+	 * 	@return string
+	 */
+	public function getActors() {
+		return $this->_data['casts'];
+	}
 
-	/** 
+	/**
 	 * 	Get the Movie's tagline
 	 *
 	 * 	@return string
@@ -58,7 +74,7 @@ class Movie{
 		return $this->_data['tagline'];
 	}
 
-	/** 
+	/**
 	 * 	Get the Movie's Poster
 	 *
 	 * 	@return string
@@ -67,7 +83,7 @@ class Movie{
 		return $this->_data['poster_path'];
 	}
 
-	/** 
+	/**
 	 * 	Get the Movie's vote average
 	 *
 	 * 	@return int
@@ -76,7 +92,7 @@ class Movie{
 		return $this->_data['vote_average'];
 	}
 
-	/** 
+	/**
 	 * 	Get the Movie's vote count
 	 *
 	 * 	@return int
@@ -85,7 +101,7 @@ class Movie{
 		return $this->_data['vote_count'];
 	}
 
-	/** 
+	/**
 	 * 	Get the Movie's trailers
 	 *
 	 * 	@return array
@@ -99,7 +115,7 @@ class Movie{
 		return $this->_data['trailers'];
 	}
 
-	/** 
+	/**
 	 * 	Get the Movie's trailer
 	 *
 	 * 	@return string
@@ -172,7 +188,7 @@ class Movie{
 	// Export
 	//------------------------------------------------------------------------------
 
-	/** 
+	/**
 	 * 	Get the JSON representation of the Movie
 	 *
 	 * 	@return string
