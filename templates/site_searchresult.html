@@ -1,0 +1,21 @@
+<?php include "templates/top.html"; ?>
+
+<h1>Suchergebnis</h1>
+
+<?php include "templates/searchform.html"; ?>
+
+<?php
+if ( !count( $arrMovies)) {
+	echo "nix gefunden :-(";
+} else {
+	foreach ( $arrMovies as $objMovie) {
+		echo "<div class='moviebox'>
+			<h3>" . $objMovie->getTitle() . "</h3>
+			<small>" . $objMovie->getReleaseDate() . "</small>
+			<img src='" . $objApi->getimageUrl('w185').$objMovie->getPoster() . "' />
+		</div>";
+	}
+}
+?>
+
+<?php include "templates/footer.html"; ?>

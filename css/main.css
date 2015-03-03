@@ -1,0 +1,36 @@
+body {
+	
+}
+
+.moviebox {
+	background-color: #eee;
+	box-shadow: 0 0 1px #999;
+	float: left;
+	height: 200px;
+	margin: 2px;
+	overflow: hidden;
+	text-align: center;
+	width: 175px;
+}
+
+.moviebox h3 {
+	font-size: 13px;
+	margin: 3px 10px;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.moviebox small {
+	display: block;
+	font-size: 8px;
+}
+
+.moviebox img {
+	box-shadow: 0 0 3px #444;
+	height: 145px;
+	margin: 5px;
+	width: 105px;
+}
