@@ -7,7 +7,7 @@ if ( !count( $arrMovies)) { ?>
 <?php } else { 
 	foreach ( $arrMovies as $objMovie) { ?>
 		<div class='moviebox' style=''>
-			<img src='<?= $objApi->getimageUrl('w185').$objMovie->getPoster(); ?>' />
+			<img src='<?= $objApi->getimageUrl('w500').$objMovie->getPoster(); ?>' />
 		</div>
 	<?php }
 }
