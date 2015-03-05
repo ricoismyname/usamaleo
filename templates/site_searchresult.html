@@ -4,9 +4,18 @@
 <?php
 if ( !count( $arrMovies)) { ?>
 	nix gefunden :-(
-<?php } else { 
+<?php } else {
 	foreach ( $arrMovies as $objMovie) { ?>
 		<div class='moviebox' style=''>
+      <div class='moviebox-body' >
+        <div class='moviebox-footer'>
+          <h4 class="white center">
+            Experten für Leads
+          </h4>
+          <p class="margin-top-md white">
+            Marshmallow pastry cheesecake biscuit jelly beans cupcake candy canes cookie. Marshmallow I love sugar plum carrot cake pie sugar plum jujubes chupa chups biscuit. Candy pastry croissant marshmallow. Chocolate cake cheesecake candy canes I love pastry pudding halvah carrot cake. Caramels jelly pudding. Chocolate bar halvah I love. Cake halvah jujubes wafer cake jujubes.
+          </p>
+        </div>
 			<img src='<?= $objApi->getimageUrl('w185').$objMovie->getPoster(); ?>' />
 		</div>
 	<?php }
