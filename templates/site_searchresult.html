@@ -1,16 +1,22 @@
-<?php include "templates/top.html"; ?>
-
-
 <?php
 if ( !count( $arrMovies)) { ?>
 	nix gefunden :-(
-<?php } else { 
-	foreach ( $arrMovies as $objMovie) { ?>
+<?php } else {
+	foreach ( $arrMovies as $objMovie) { 
+		$objMovie = $objApi->getMovie( $objMovie->getID());?>
 		<div class='moviebox' style=''>
-			<img src='<?= $objApi->getimageUrl('w500').$objMovie->getPoster(); ?>' />
+      		<div class='moviebox-body' >
+				<div class='moviebox-footer'>
+				  	<strong>
+				   		<?= $objMovie->getTitle();?>
+				  	</strong>
+				  	<p>
+				  		<?= $objMovie->getShortDescription(); ?>
+				  	</p>
+        		</div>
+				<img src='<?= $objApi->getimageUrl('w300').$objMovie->getPoster(); ?>' />
+			</div>
 		</div>
 	<?php }
 }
 ?>
-
-<?php include "templates/footer.html"; ?>

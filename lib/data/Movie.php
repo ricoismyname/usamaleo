@@ -57,6 +57,24 @@ class Movie{
 		return $this->_data['overview'];
 	}
 
+	public function getShortDescription() {
+		$strShortDescription = "";
+		$strDescription = $this->getDescription();
+		if ( $strDescription) {
+			$strShortDescription = substr( $strDescription, 0, 300) ;
+		} else {
+			$arrTmp = array();
+			foreach ( $this->getActors() as $arrActor)
+			{
+				$arrTmp[] = $arrActor["name"] . " (" . $arrActor["character"] . ")";
+			}
+			$strShortDescription = implode( "<br />", $arrTmp); 
+		}
+		$strShortDescription .= " ... &raquo;";
+		
+		return $strShortDescription;
+	}
+	
 	/**
 	 *
 	 * 	@return array

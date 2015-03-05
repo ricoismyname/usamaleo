@@ -10,21 +10,32 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jquery.grid-a-licious.js"></script>
+<script type="text/javascript" src="js/site.js"></script>
 <!--  <script type="text/javascript" src="js/less.min.js"></script> -->
 <title>USAMALEO</title>
 <script type="text/javascript">
 	$(document).ready( function () {
-		$(".maincontent").gridalicious({
-			selector: '.moviebox',
-			width: 225,
-			gutter: 5,
-			animate: true,
-			animationOptions: {
-				queue: true,
-				speed: 200,
-				duration: 300,
-				effect: 'fadeInOnAppear'
-			}
+		initGrid();
+		$("#searchform").submit(function() {
+		    var url = "index.php";
+		    $.ajax({
+				type: "POST",
+				url: url,
+				data: $("#searchform").serialize(),
+				beforeSend: function() {
+					$('.maincontent').attr( "style", "opacity: 0.2;");
+					$('.loader').fadeIn();
+				},
+				complete: function(){
+					$('.loader').fadeOut();
+					$('.maincontent').removeAttr( "style");
+				},
+				success: function(data) {
+				    $(".maincontent").html( data);
+				    initGrid();
+				}
+			});
+		    return false;
 		});
 	});
 </script>
@@ -34,5 +45,6 @@
 	<div class="title">USAMALEO.com</div>
 	<?php include "templates/searchform.html"; ?>
 </div>
+<div class="loader"></div>
 <div class="maincontent">
 
