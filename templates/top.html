@@ -3,10 +3,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<!-- <link rel="stylesheet/less" type="text/css" href="css/styles.less" /> -->
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.grid-a-licious.js"></script>
+<!--  <script type="text/javascript" src="js/less.min.js"></script> -->
 <title>USAMALEO</title>
+<script type="text/javascript">
+	$(document).ready( function () {
+		$(".maincontent").gridalicious({
+			selector: '.moviebox',
+			width: 225,
+			gutter: 5,
+			animate: true,
+			animationOptions: {
+				queue: true,
+				speed: 200,
+				duration: 300,
+				effect: 'fadeInOnAppear'
+			}
+		});
+	});
+</script>
 </head>
 <body>
 <div class="toparea">

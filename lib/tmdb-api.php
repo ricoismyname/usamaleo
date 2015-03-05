@@ -433,7 +433,9 @@ class TMDB{
 		$result = $this->_call('search/movie', 'query='. urlencode($movieTitle), $this->getLang());
 
 		foreach($result['results'] as $data){
-			$movies[] = new Movie($data);
+			$movie = new Movie($data);
+			$movie->setAPI( $this);
+			$movies[] = $movie;
 		}
 
 		return $movies;

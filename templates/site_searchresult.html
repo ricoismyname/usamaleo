@@ -2,16 +2,14 @@
 
 
 <?php
-if ( !count( $arrMovies)) {
-	echo "nix gefunden :-(";
-} else {
-	foreach ( $arrMovies as $objMovie) {
-		echo "<div class='moviebox'>
-			<h3>" . $objMovie->getTitle() . "</h3>
-			<small>" . $objMovie->getReleaseDate() . "</small>
-			<img src='" . $objApi->getimageUrl('w185').$objMovie->getPoster() . "' />
-		</div>";
-	}
+if ( !count( $arrMovies)) { ?>
+	nix gefunden :-(
+<?php } else { 
+	foreach ( $arrMovies as $objMovie) { ?>
+		<div class='moviebox' style=''>
+			<img src='<?= $objApi->getimageUrl('w185').$objMovie->getPoster(); ?>' />
+		</div>
+	<?php }
 }
 ?>
 

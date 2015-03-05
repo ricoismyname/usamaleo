@@ -9,6 +9,7 @@ class Event_Search implements IEvent
 		$objApi->setLang('de');
 		
 		$arrMovies = $objApi->searchMovie( $_REQUEST["searchValue"]);
+		
 
 		include 'templates/site_searchresult.html';
 	}
