@@ -1,0 +1,20 @@
+<?php
+if ( $objMovie) {?>
+
+	<div class="moviedetails" style="background: url(<?= $objApi->getimageUrl('original').$objMovie->getPoster(); ?>) no-repeat fixed center center;">
+		<div class="details ui-widget">
+			<div class="title"><?=$objMovie->getTitle();?></div>
+			<div class="trailer">
+				<iframe src='http://www.youtube.com/embed/<?= $objMovie->getTrailer(); ?>'></iframe>
+			</div>
+			<div class="description"><?=$objMovie->getDescription();?></div>
+			<div class="infos"><label>Besetzung:</label><span><?= $strActors;?></span></div>
+			<div class="infos"><label>Regie:</label><span><?= $strDirectors;?></span></div>
+			<div class="infos"><label>Produzent:</label><span><?= $strProducers;?></span></div>
+			<div class="infos"><label>Erscheinungsdatum:</label><span><?= date("d.m.Y", strtotime( $objMovie->getReleaseDate()));?></span></div>
+		</div>
+	</div>
+
+	<?php
+}
+?>

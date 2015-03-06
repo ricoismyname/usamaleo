@@ -68,21 +68,21 @@ class Movie{
 			{
 				$arrTmp[] = $arrActor["name"] . " (" . $arrActor["character"] . ")";
 			}
-			$strShortDescription = implode( "<br />", $arrTmp); 
+			$strShortDescription = implode( "<br />", $arrTmp);
 		}
 		$strShortDescription .= " ... &raquo;";
-		
+
 		return $strShortDescription;
 	}
-	
+
 	/**
 	 *
 	 * 	@return array
 	 */
 	public function getActors() {
-		return array_slice( $this->_data['casts']['cast'], 0, 4);
+		return array_slice( $this->_data['casts']['cast'], 0, 6);
 	}
-	
+
 	/**
 	 *
 	 * 	@return array
@@ -90,7 +90,7 @@ class Movie{
 	public function getGenres() {
 		return $this->_data['genres'];
 	}
-	
+
 	/**
 	 *
 	 * 	@return string
@@ -98,7 +98,7 @@ class Movie{
 	public function getReleaseDate() {
 		return $this->_data['release_date'];
 	}
-	
+
 	/**
 	 *
 	 * 	@return string
@@ -110,11 +110,11 @@ class Movie{
 			if ( $arrCrew["job"] == "Director" )
 			{
 				$arrDirectors[] = $arrCrew;
-			} 
+			}
 		}
 		return $arrDirectors;
 	}
-	
+
 	/**
 	 *
 	 * 	@return string
@@ -130,7 +130,7 @@ class Movie{
 		}
 		return $arrProducers;
 	}
-	
+
 	/**
 	 * 	Get the Movie's tagline
 	 *

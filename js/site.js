@@ -12,3 +12,21 @@ function initGrid() {
 		}
 	});
 }
+
+function showMovie( movieId) {
+	$.ajax({
+		type: "POST",
+		url: "index.php?event=movie&movieid=" + movieId,
+		beforeSend: function() {
+			$('.maincontent').attr( "style", "opacity: 0.2;");
+			$('.loader').fadeIn();
+		},
+		complete: function(){
+			$('.loader').fadeOut();
+			$('.maincontent').removeAttr( "style");
+		},
+		success: function(data) {
+		    $(".maincontent").html( data);
+		}
+	});
+}

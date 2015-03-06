@@ -2,10 +2,10 @@
 if ( !count( $arrMovies)) { ?>
 	nix gefunden :-(
 <?php } else {
-	foreach ( $arrMovies as $objMovie) { 
+	foreach ( $arrMovies as $objMovie) {
 		$objMovie = $objApi->getMovie( $objMovie->getID());?>
 		<div class='moviebox' style=''>
-      		<div class='moviebox-body' >
+      		<div class='moviebox-body' onclick='showMovie(<?= $objMovie->getID();?>);'>
 				<div class='moviebox-footer'>
 				  	<strong>
 				   		<?= $objMovie->getTitle();?>
